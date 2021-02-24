@@ -1,0 +1,8 @@
+Para empezar un proyecto de Node
+npm init -y
+
+npm i express mongoose cors dotenv
+npm i nodemon -D
+
+Para reiniciar el servidor automaticmante 
+npx nodemon src/index.js

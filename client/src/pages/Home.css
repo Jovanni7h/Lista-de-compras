@@ -1,0 +1,85 @@
+.container-fluid {
+
+  position: relative;
+}
+
+#imagen {
+  width: 100vw;
+  height: calc(100vh - 56px);
+  display: block;
+}
+
+.overlay {
+  margin: 0;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .5);
+  overflow: hidden;
+  width: 100vw;
+  height: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.container-fluid:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+
+#texto {
+  font-size: 2rem;
+  white-space: nowrap;
+  color: white;
+  position: absolute;
+  overflow: hidden;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 576px) {
+  .container-sm,
+  .container {
+    max-width: 540px;
+  }
+
+  #texto{
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 720px;
+  }
+}
+@media (max-width: 992px) {
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 960px;
+  }
+}
+@media (max-width: 1200px) {
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (max-width: 1400px) {
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1320px;
+  }
+}

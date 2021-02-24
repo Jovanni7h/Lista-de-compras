@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import './styles/CreateUser.css'
+
 export default class CreateUser extends Component {
   state = {
     users: [],
@@ -42,7 +44,7 @@ export default class CreateUser extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container mt-4">
         <div className="row d-flex justify-content-center mb-4">
           <div className="col-md-4">
             <div className="card card-body">
@@ -53,7 +55,7 @@ export default class CreateUser extends Component {
                     type="text"
                     className="form-control mb-4"
                     id="floatingInput"
-                    placeholder="Email address"
+                    placeholder="Nombre"
                     value={this.state.username}
                     onChange={this.onChangeUserName}
                   />
@@ -74,11 +76,16 @@ export default class CreateUser extends Component {
             <ul className="list-group">
               {this.state.users.map((user) => (
                 <li
-                  className="list-group-item list-group-item-action"
+                  className="list-group-item d-flex justify-content-between "
                   key={user._id}
-                  onDoubleClick={() => this.deleteUser(user._id)}
                 >
                   {user.username}
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => this.deleteUser(user._id)}
+                  >
+                    Delete
+                  </button>
                 </li>
               ))}
             </ul>

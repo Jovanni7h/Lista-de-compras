@@ -53,7 +53,7 @@ export default class CreateNote extends Component {
       await axios.post("http://localhost:4000/api/notes", newNote);
     }
     //Para hacer una redireccion
-    window.location.href = "/";
+    window.location.href = "/list";
   };
 
   // onImputChange = e => {
@@ -73,18 +73,23 @@ export default class CreateNote extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container mt-4">
         <div className="row d-flex justify-content-center">
           <div className="col-md-6">
             <div className="card card-body">
               <h4>Create a Note</h4>
               {/*SELECT USER*/}
               <div className="form-group">
+                <label for="exampleInputEmail1" class="form-label">
+                  Select User:
+                </label>
+
                 <select
                   className="form-control"
                   name="userSelected"
                   onChange={this.onImputChange}
                   value={this.state.userSelected}
+                  id="exampleInputEmail1"
                 >
                   {this.state.users.map((user) => (
                     <option key={user} value={user}>
@@ -95,9 +100,14 @@ export default class CreateNote extends Component {
               </div>
 
               <div className="form-group">
+                <label for="exampleInputEmail2" class="form-label">
+                  Note Title:
+                </label>
+
                 <input
                   type="text"
                   className="form-control"
+                  id="exampleInputEmail2"
                   placeholder="Title"
                   name="title"
                   value={this.state.title}
@@ -107,9 +117,13 @@ export default class CreateNote extends Component {
               </div>
 
               <div className="form-group">
+                <label for="exampleInputEmail3" class="form-label">
+                  Note Content
+                </label>
                 <textarea
                   name="content"
                   className="form-control"
+                  id="exampleInputEmail3"
                   placeholder="Content"
                   value={this.state.content}
                   onChange={this.onImputChange}
@@ -118,10 +132,15 @@ export default class CreateNote extends Component {
               </div>
 
               <div className="form-group">
+                <label for="exampleInputEmail4" class="form-label d-block">
+                  Note Date: 
+                </label>
+
                 <DatePicker
                   className="form-control"
                   selected={this.state.date}
                   onChange={this.onChangeDate}
+                  id="exampleInputEmail4"
                 />
               </div>
 

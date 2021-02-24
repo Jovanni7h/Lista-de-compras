@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
+import './styles/Navigation.css'
 
 export default class Navigation extends Component {
   render() {
@@ -24,18 +25,18 @@ export default class Navigation extends Component {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link className="nav-link" to="/">
+                <Link className="nav-link" to="/list">
                   Notes
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/create">
-                  Create Note
+                  Crear Note
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/user">
-                  Create User
+                  Crear Usuario
                 </Link>
               </li>
             </ul>
